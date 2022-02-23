@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="filliere_array">
+        <item>TDI</item>
+        <item>TDM</item>
+        <item>TRI</item>
+    </string-array>
+</resources>

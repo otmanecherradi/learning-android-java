@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:stretchColumns="1"
+    tools:context=".FourthActivity">
+
+    <TableRow>
+        <TextView
+            android:gravity="center"
+            android:text="@string/poids"
+            android:textColor="@color/pink" />
+
+        <EditText
+            android:layout_span="2"
+            android:hint="@string/poids" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:gravity="center"
+            android:text="@string/taille"
+            android:textColor="@color/pink" />
+
+        <EditText
+            android:layout_span="2"
+            android:hint="@string/taille" />
+    </TableRow>
+
+    <TableRow>
+        <RadioGroup
+            android:layout_span="3"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/metre" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/centimetre" />
+        </RadioGroup>
+    </TableRow>
+
+    <TableRow>
+        <CheckBox
+            android:layout_weight="1"
+            android:text="@string/mega_fonction" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:text="@string/calculer_imc" />
+
+        <Button
+            android:layout_column="2"
+            android:text="@string/cancel" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_span="3"
+            android:text="@string/resultat" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_span="3"
+            android:text="@string/info" />
+    </TableRow>
+
+</TableLayout>

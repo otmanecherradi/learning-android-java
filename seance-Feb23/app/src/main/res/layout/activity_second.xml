@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SecondActivity"
+    android:stretchColumns="1"
+>
+
+    <include layout="@layout/header" />
+
+    <TableRow>
+
+        <TextView android:text="@string/welcome" />
+
+        <EditText
+            android:layout_span="2"/>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView android:text="@string/group" />
+
+        <EditText
+            android:hint="@string/group"
+            android:layout_span="2"/>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView android:text="@string/filliere" />
+
+        <Spinner
+            android:id="@+id/fillire_spinner"
+            android:entries="@array/filliere_array"
+            android:layout_span="2"
+            />
+
+    </TableRow>
+
+    <TableRow >
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_span="3">
+
+            <RadioButton
+                android:text="@string/technicien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:text="@string/technicien_specialise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </RadioGroup>
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:text="@string/add"
+
+            />
+
+        <Button
+            android:text="@string/cancel"
+            android:layout_column="2"
+            />
+
+
+    </TableRow>
+
+</TableLayout>
