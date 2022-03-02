@@ -6,6 +6,8 @@
 - Layouts:
   - LinearLayout
   - TableLayout
+  - RelativeLayout
+- Personalized Styles
 
 ### Extras
 
@@ -14,5 +16,5 @@
 
 ### Tools
 
-- Android Studio: [Android Studio](https://developer.android.com/studio)
+- IDE: [Android Studio](https://developer.android.com/studio)
 - Screenshots: [carbon.now.sh](https://carbon.now.sh/)

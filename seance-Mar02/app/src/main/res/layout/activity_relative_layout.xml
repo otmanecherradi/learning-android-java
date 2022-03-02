@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelativeLayoutActivity">
+
+    <TextView
+        android:id="@+id/header"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+
+        android:layout_marginTop="50dp"
+
+        android:text="Module"
+
+        android:textFontWeight="700" />
+
+
+    <TextView
+        android:id="@+id/num_label"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/header"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+
+        android:text="Num" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/header"
+        android:layout_alignBaseline="@id/num_label"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+
+        android:layout_toEndOf="@id/num_label" />
+
+
+    <TextView
+        android:id="@+id/lib_label"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/num_label"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+
+        android:text="Libelle" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBaseline="@id/lib_label"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@id/lib_label" />
+
+
+    <TextView
+        android:id="@+id/mh_label"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/lib_label"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+
+        android:text="Masse Horaire" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBaseline="@id/mh_label"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@id/mh_label" />
+
+
+    <Button
+        android:id="@+id/add"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBaseline="@id/cancel"
+
+        android:layout_marginTop="25dp"
+
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@+id/cancel"
+
+        android:text="Ajouter" />
+
+    <Button
+        android:id="@+id/cancel"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/mh_label"
+
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginTop="25dp"
+
+        android:layout_marginEnd="8dp"
+        android:text="Annuler" />
+
+</RelativeLayout>
