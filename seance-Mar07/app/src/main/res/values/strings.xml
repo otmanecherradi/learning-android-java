@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Calculator App</string>
+
+    <string name="main_zero">0</string>
+    <string name="main_equals">=</string>
+    <string name="main_cos">cos</string>
+    <string name="main_sin">sin</string>
+    <string name="main_tan">tan</string>
+    <string name="main_clear">C/CE</string>
+    <string name="main_number_7">7</string>
+    <string name="main_number_8">8</string>
+    <string name="main_number_9">9</string>
+    <string name="main_sqrt">√</string>
+    <string name="main_number_4">4</string>
+    <string name="main_number_5">5</string>
+    <string name="main_number_6">6</string>
+    <string name="main_division">/</string>
+    <string name="main_number_1">1</string>
+    <string name="main_number_2">2</string>
+    <string name="main_number_3">3</string>
+    <string name="main_multiply">x</string>
+    <string name="main_number_0">0</string>
+    <string name="main_comma">.</string>
+    <string name="main_minus">-</string>
+    <string name="main_plus">+</string>
+
+    <string name="main_numbers_error">Can\'t add more than 10 numbers</string>
+    <string name="main_special_operator_error">Type a number to use this feature</string>
+    <string name="main_division_error">Division impossible</string>
+</resources>

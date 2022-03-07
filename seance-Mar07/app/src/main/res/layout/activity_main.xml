@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:columnCount="4"
+    android:orientation="horizontal"
+    android:rowCount="6"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="4"
+        android:layout_gravity="fill_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/main_show_operation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="1"
+            android:text=""
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/main_equals_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/main_equals"
+            android:textSize="30sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/main_res_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="end|center"
+            android:maxLines="1"
+            android:text="@string/main_zero"
+            android:textSize="33sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/main_equals_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        style="@style/operator_button"
+        android:onClick="handleSpecialOperationClick"
+        android:text="@string/main_cos" />
+
+    <Button
+        style="@style/operator_button"
+        android:onClick="handleSpecialOperationClick"
+        android:text="@string/main_sin" />
+
+    <Button
+        style="@style/operator_button"
+        android:onClick="handleSpecialOperationClick"
+        android:text="@string/main_tan" />
+
+    <Button
+        style="@style/clear_button"
+        android:onClick="handleClearClick"
+        android:text="@string/main_clear" />
+
+    <Button
+        style="@style/number_button"
+        android:onClick="handleNumberClick"
+        android:text="@string/main_number_7" />
+
+    <Button
+        style="@style/number_button"
+        android:onClick="handleNumberClick"
+        android:text="@string/main_number_8" />
+
+    <Button
+        style="@style/number_button"
+        android:onClick="handleNumberClick"
+        android:text="@string/main_number_9" />
+
+    <Button
+        style="@style/operator_button"
+        android:onClick="handleSpecialOperationClick"
+        android:text="@string/main_sqrt" />
+
+    <Button
+        style="@style/number_button"
+        android:onClick="handleNumberClick"
+        android:text="@string/main_number_4" />
+
+    <Button
+        style="@style/number_button"
+        android:onClick="handleNumberClick"
+        android:text="@string/main_number_5" />
+
+    <Button
+        style="@style/number_button"
+        android:onClick="handleNumberClick"
+        android:text="@string/main_number_6" />
+
+    <Button
+        style="@style/operator_button"
+        android:onClick="handleOperationClick"
+        android:text="@string/main_division" />
+
+    <Button
+        style="@style/number_button"
+        android:onClick="handleNumberClick"
+        android:text="@string/main_number_1" />
+
+    <Button
+        style="@style/number_button"
+        android:onClick="handleNumberClick"
+        android:text="@string/main_number_2" />
+
+    <Button
+        style="@style/number_button"
+        android:onClick="handleNumberClick"
+        android:text="@string/main_number_3" />
+
+    <Button
+        style="@style/operator_button"
+        android:onClick="handleOperationClick"
+        android:text="@string/main_multiply" />
+
+    <Button
+        style="@style/number_button"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:onClick="handleNumberClick"
+        android:text="@string/main_number_0" />
+
+    <Button
+        style="@style/number_button"
+        android:onClick="handleCommaClick"
+        android:text="@string/main_comma" />
+
+    <Button
+        style="@style/operator_button"
+        android:onClick="handleOperationClick"
+        android:text="@string/main_minus" />
+
+    <Button
+        style="@style/equals_button"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill_horizontal"
+        android:onClick="handleEqualsClick"
+        android:text="@string/main_equals" />
+
+    <Button
+        style="@style/operator_button"
+        android:onClick="handleOperationClick"
+        android:text="@string/main_plus" />
+</GridLayout>
