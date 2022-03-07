@@ -13,20 +13,20 @@
 
 - Default view
 
-![Default view](./default.png)
+<img src="./default.png" alt="Default view" height="690" />
 
 - Type number
 
-![Type number](./type_number.png)
+<img src="./type_number.png" alt="Type number" height="690" />
 
 - Add operation result
 
-![Add operation result](./add_operation_result.png)
+<img src="./add_operation_result.png" alt="Add operation result" height="690" />
 
 - `cos` operation result
 
-![COS operation result](./cos_operation_result.png)
+<img src="./cos_operation_result.png" alt="COS operation result" height="690" />
 
 - `sqrt` operation result
 
-![SQRT operation result](./sqrt_operation_result.png)
+<img src="./sqrt_operation_result.png" alt="SQRT operation result" height="690" />
