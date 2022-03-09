@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">School Management</string>
+
+    <string name="ismontic">ISMONTIC</string>
+    <string name="account">Compte</string>
+    <string name="password">Mot de passe</string>
+    <string name="signin">Se connecter</string>
+    <string name="group">Groupe</string>
+    <string name="technicien">Technicien</string>
+    <string name="technicien_specialise">Technicien specialise</string>
+    <string name="add">Ajouter</string>
+    <string name="cancel">Annuler</string>
+    <string name="welcome">Bienvenue Mr</string>
+    <string name="filliere">Filiere</string>
+    <string name="poids">Poids</string>
+    <string name="taille">Taille</string>
+    <string name="metre">Metre</string>
+    <string name="centimetre">Centimetre</string>
+    <string name="mega_fonction">Mega fonction !</string>
+    <string name="calculer_imc">Calculer l\'IMC</string>
+    <string name="resultat">Resultat:</string>
+    <string name="info"><![CDATA[Vous devez cliquer sur de boutton <Calculer l\'IMC> pour obtenir un resultat.]]></string>
+
+    <string-array name="branches_array">
+        <item>TDI</item>
+        <item>TDM</item>
+        <item>TRI</item>
+    </string-array>
+</resources>
