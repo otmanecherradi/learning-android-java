@@ -6,9 +6,14 @@
   - LinearLayout
   - TableLayout
   - RelativeLayout
+  - ConstraintLayout
 - Personalized Styles
 - Activities
   - Button click listeners
+  - Intent
+  - ActionBar
+  - Custom Toolbar
+  - Menu
 
 ### Extras
 
