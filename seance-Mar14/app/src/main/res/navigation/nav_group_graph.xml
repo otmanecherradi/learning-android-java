@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_group_graph"
+    app:startDestination="@id/fragment_list_group">
+
+    <fragment
+        android:id="@+id/fragment_list_group"
+        android:name="com.dev.schoolmanagement.ui.group.ListGroupFragment"
+        android:label="@string/fragment_list_group_label"
+        tools:layout="@layout/fragment_list_group">
+
+        <action
+            android:id="@+id/action_fragment_list_group_to_fragment_add_group"
+            app:destination="@id/fragment_add_group" />
+        <action
+            android:id="@+id/action_fragment_list_group_to_fragment_search_group"
+            app:destination="@id/fragment_search_group" />
+        <action
+            android:id="@+id/action_fragment_list_group_to_display_group_fragment"
+            app:destination="@id/display_group_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_add_group"
+        android:name="com.dev.schoolmanagement.ui.group.AddGroupFragment"
+        android:label="@string/fragment_add_group_label"
+        tools:layout="@layout/fragment_add_group" />
+
+    <fragment
+        android:id="@+id/fragment_search_group"
+        android:name="com.dev.schoolmanagement.ui.group.SearchGroupFragment"
+        android:label="search_group_fragment"
+        tools:layout="@layout/fragment_search_group" />
+
+    <fragment
+        android:id="@+id/display_group_fragment"
+        android:name="com.dev.schoolmanagement.ui.group.DisplayGroupFragment"
+        android:label="display_group_fragment"
+        tools:layout="@layout/fragment_display_group">
+
+        <argument
+            android:name="group"
+            app:argType="com.dev.schoolmanagement.models.Group" />
+    </fragment>
+</navigation>

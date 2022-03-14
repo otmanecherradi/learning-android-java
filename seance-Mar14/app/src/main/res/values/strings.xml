@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">School Management</string>
+
+    <string name="ismontic">ISMONTIC</string>
+    <string name="account">Compte</string>
+    <string name="password">Mot de passe</string>
+    <string name="signin">Se connecter</string>
+    <string name="group">Groupe</string>
+    <string name="technicien">Technicien</string>
+    <string name="technicien_specialise">Technicien specialise</string>
+    <string name="add">Ajouter</string>
+    <string name="cancel">Annuler</string>
+    <string name="welcome">Bienvenue Mr</string>
+    <string name="filliere">Filiere</string>
+    <string name="poids">Poids</string>
+    <string name="taille">Taille</string>
+    <string name="metre">Metre</string>
+    <string name="centimetre">Centimetre</string>
+    <string name="mega_fonction">Mega fonction !</string>
+    <string name="calculer_imc">Calculer l\'IMC</string>
+    <string name="resultat">Resultat:</string>
+    <string name="info"><![CDATA[Vous devez cliquer sur de boutton <Calculer l\'IMC> pour obtenir un resultat.]]></string>
+
+    <string-array name="branches_array">
+        <item>TDI</item>
+        <item>TDM</item>
+        <item>TRI</item>
+    </string-array>
+
+    <string name="title_activity_main_group">MainGroupActivity</string>
+
+    <string name="fragment_list_group_label">Groups View</string>
+    <string name="fragment_add_group_label">Add Group Form</string>
+
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+
+</resources>
