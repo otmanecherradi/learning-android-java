@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/fragment_menu">
+
+    <fragment
+        android:id="@+id/fragment_menu"
+        android:name="com.dev.tp1.ui.menu.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_fragment_menu_to_fragment_list_theme"
+            app:destination="@id/fragment_list_theme" />
+
+        <action
+            android:id="@+id/action_fragment_menu_to_fragment_list_document"
+            app:destination="@id/fragment_list_document" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_list_theme"
+        android:name="com.dev.tp1.ui.themes.ListThemeFragment"
+        android:label="Themes"
+        tools:layout="@layout/fragment_list_theme">
+        <action
+            android:id="@+id/action_fragment_list_theme_to_fragment_display_theme"
+            app:destination="@id/fragment_display_theme" />
+
+        <action
+            android:id="@+id/action_fragment_list_theme_to_fragment_edit_theme"
+            app:destination="@id/fragment_edit_theme" />
+
+        <action
+            android:id="@+id/action_fragment_list_theme_to_fragment_search_theme"
+            app:destination="@id/fragment_search_theme" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_edit_theme"
+        android:name="com.dev.tp1.ui.themes.EditThemeFragment"
+        tools:layout="@layout/fragment_edit_theme" />
+
+    <fragment
+        android:id="@+id/fragment_display_theme"
+        android:name="com.dev.tp1.ui.themes.DisplayThemeFragment"
+        tools:layout="@layout/fragment_display_theme">
+        <action
+            android:id="@+id/action_fragment_display_theme_to_fragment_edit_theme"
+            app:destination="@id/fragment_edit_theme" />
+        <action
+            android:id="@+id/action_fragment_display_theme_to_fragment_list_document"
+            app:destination="@id/fragment_list_document" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_search_theme"
+        android:name="com.dev.tp1.ui.themes.SearchThemeFragment"
+        tools:layout="@layout/fragment_search_theme" />
+
+    <fragment
+        android:id="@+id/fragment_list_document"
+        android:name="com.dev.tp1.ui.documents.ListDocumentFragment"
+        tools:layout="@layout/fragment_list_document">
+        <action
+            android:id="@+id/action_fragment_list_document_to_fragment_edit_document"
+            app:destination="@id/fragment_edit_document" />
+
+        <action
+            android:id="@+id/action_fragment_list_document_to_fragment_display_document"
+            app:destination="@id/fragment_display_document" />
+
+        <action
+            android:id="@+id/action_fragment_list_document_to_fragment_search_document"
+            app:destination="@id/fragment_search_document" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_edit_document"
+        android:name="com.dev.tp1.ui.documents.EditDocumentFragment"
+        tools:layout="@layout/fragment_edit_document" />
+
+    <fragment
+        android:id="@+id/fragment_display_document"
+        android:name="com.dev.tp1.ui.documents.DisplayDocumentFragment"
+        tools:layout="@layout/fragment_display_document" />
+
+    <fragment
+        android:id="@+id/fragment_search_document"
+        android:name="com.dev.tp1.ui.documents.SearchDocumentFragment"
+        tools:layout="@layout/fragment_search_document"  />
+</navigation>
