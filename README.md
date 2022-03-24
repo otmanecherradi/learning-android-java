@@ -14,6 +14,7 @@
   - ActionBar
   - Custom Toolbar
   - Menu
+- Notifications
 
 ### Extras
 

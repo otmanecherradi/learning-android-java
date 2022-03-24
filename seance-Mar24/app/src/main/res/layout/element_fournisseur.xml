@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/fr_name"
+        style="@style/FournisseurName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MBSA" />
+
+    <TextView
+        android:id="@+id/fr_address"
+        style="@style/FournisseurAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ZI guezenaya" />
+
+    <TextView
+        android:id="@+id/fr_phone"
+        style="@style/FournisseurPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="06567854567" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
