@@ -16,6 +16,7 @@
   - Menu
 - Notifications
 - Fragments
+- SQLite
 
 ### Extras
 
