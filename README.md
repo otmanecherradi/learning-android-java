@@ -17,6 +17,7 @@
 - Notifications
 - Fragments
 - SQLite
+- Tabs & TabLayout
 
 ### Extras
 

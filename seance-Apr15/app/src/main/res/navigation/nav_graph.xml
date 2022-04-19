@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ListClientFragment">
+
+    <fragment
+        android:id="@+id/ListClientFragment"
+        android:name="me.otmane.myapplication.ui.client.ListClientFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/list_clients_fragment">
+
+        <action
+            android:id="@+id/action_ListClientFragment_to_EditClientFragment"
+            app:destination="@id/EditClientFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/EditClientFragment"
+        android:name="me.otmane.myapplication.ui.client.EditClientFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/edit_client_fragment">
+
+        <action
+            android:id="@+id/action_EditClientFragment_to_ListClientFragment"
+            app:destination="@id/ListClientFragment" />
+    </fragment>
+</navigation>
