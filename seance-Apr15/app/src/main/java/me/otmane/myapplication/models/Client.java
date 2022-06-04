@@ -13,6 +13,7 @@ public class Client {
     public static final String NAME_FIELD_NAME = "name";
     public static final String PHONE_FIELD_NAME = "phone";
     public static final String ADDRESS_FIELD_NAME = "address";
+    public static final String PICTURE_FIELD_NAME = "picture";
 
     @Language("sql")
     private static final String CODE_FIELD = CODE_FIELD_NAME + " INTEGER PRIMARY KEY AUTOINCREMENT";
@@ -22,15 +23,18 @@ public class Client {
     private static final String PHONE_FIELD = PHONE_FIELD_NAME + " TEXT NOT NULL";
     @Language("sql")
     private static final String ADDRESS_FIELD = ADDRESS_FIELD_NAME + " TEXT";
+    @Language("sql")
+    public static final String PICTURE_FIELD = PICTURE_FIELD_NAME + " BLOB";
 
     public static final List<String> TABLE_FIELDS = Arrays.asList(
-            CODE_FIELD, NAME_FIELD, PHONE_FIELD, ADDRESS_FIELD
+            CODE_FIELD, NAME_FIELD, PHONE_FIELD, ADDRESS_FIELD, PICTURE_FIELD
     );
 
     private int code;
     private String name;
     private String phone;
     private String address;
+    private byte[] picture;
 
     public Client() {
     }
