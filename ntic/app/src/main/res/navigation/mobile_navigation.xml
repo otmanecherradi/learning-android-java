@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigationHome">
+
+    <fragment
+        android:id="@+id/navigationHome"
+        android:name="me.otmane.ntic.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigationHome_to_navigationSubjects"
+            app:destination="@id/navigationSubjects" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationSubjects"
+        android:name="me.otmane.ntic.ui.home.SubjectsFragment"
+        android:label="Subjects"
+        tools:layout="@layout/fragment_subjects" />
+
+    <fragment
+        android:id="@+id/navigationSchedule"
+        android:name="me.otmane.ntic.ui.schedules.SchedulesFragment"
+        android:label="Schedules"
+        tools:layout="@layout/fragment_schedules" />
+
+    <fragment
+        android:id="@+id/navigationExams"
+        android:name="me.otmane.ntic.ui.exams.ExamsFragment"
+        android:label="Exams"
+        tools:layout="@layout/fragment_exams" />
+
+    <fragment
+        android:id="@+id/navigationDemands"
+        android:name="me.otmane.ntic.ui.demands.DemandsFragment"
+        android:label="Demands"
+        tools:layout="@layout/fragment_demands">
+        <action
+            android:id="@+id/action_navigationDemands_to_navigationAddDemand"
+            app:destination="@id/navigationAddDemand" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationProfile"
+        android:name="me.otmane.ntic.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigationProfile_to_loginActivity"
+            app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_navigationProfile_to_navigationEditProfile"
+            app:destination="@id/navigationEditProfile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationEditProfile"
+        android:name="me.otmane.ntic.ui.profile.ProfileEditFragment"
+        android:label="Edit profile"
+        tools:layout="@layout/fragment_edit_profile" />
+
+    <fragment
+        android:id="@+id/navigationAddDemand"
+        android:name="me.otmane.ntic.ui.demands.AddDemandFragment"
+        android:label="Add Demand"
+        tools:layout="@layout/fragment_add_demand" />
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="me.otmane.ntic.ui.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+</navigation>

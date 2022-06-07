@@ -1,0 +1,119 @@
+[
+  {
+    "title": "Centre de Qualification Professionnelle Confection - Tanger",
+    "latitude": "35.77244444",
+    "longitude": "-5.799138889",
+    "path": "/fr/etablissements/centre-de-qualification-professionnelle-confection-tanger"
+  },
+  {
+    "title": "Centre d'Insertion Essabil - Tanger",
+    "latitude": "35.74202778",
+    "longitude": "-5.794388889",
+    "path": "/fr/etablissements/centre-dinsertion-essabil-tanger"
+  },
+  {
+    "title": "Centre Mixte de Formation Professionnelle - Tanger",
+    "id": 244,
+    "latitude": "35.75105556",
+    "longitude": "-5.827583333",
+    "path": "/fr/etablissements/centre-mixte-de-formation-professionnelle-tanger"
+  },
+  {
+    "title": "Institut Sp\u00e9cialis\u00e9 dans les M\u00e9tiers de l\u2019Outillage Automobile - Tanger",
+    "id": 245,
+    "latitude": "35.757125",
+    "longitude": "-5.829323",
+    "path": "/fr/etablissements/institut-specialise-dans-les-metiers-de-loutillage-automobile-tanger"
+  },
+  {
+    "title": "Institut Sp\u00e9cialis\u00e9 dans les M\u00e9tiers de Transport Routier - Tanger",
+    "id": 247,
+    "latitude": "35.756",
+    "longitude": "-5.846777778",
+    "path": "/fr/etablissements/institut-specialise-dans-les-metiers-de-transport-routier-tanger"
+  },
+  {
+    "title": "Institut Sp\u00e9cialis\u00e9 de Technologie Appliqu\u00e9e de Textile - Confection - Tanger",
+    "id": 250,
+    "latitude": "35.743102",
+    "longitude": "-5.845343",
+    "path": "/fr/etablissements/institut-specialise-de-technologie-appliquee-de-textile-confection-tanger"
+  },
+  {
+    "title": "Institut Sp\u00e9cialis\u00e9 de Technologie Appliqu\u00e9e Ibn Marhal - Tanger",
+    "id": 252,
+    "latitude": "35.756",
+    "longitude": "-5.846777778",
+    "path": "/fr/etablissements/institut-specialise-de-technologie-appliquee-ibn-marhal-tanger"
+  },
+  {
+    "title": "Institut Sp\u00e9cialis\u00e9 dans les M\u00e9tiers de l\u2019Offshoring et les Nouvelles Technologies de l\u2019information et de la Communication ISMONTIC  - Tanger",
+    "id": 256,
+    "latitude": "35.74369444",
+    "longitude": "-5.846444444",
+    "path": "/fr/etablissements/institut-specialise-dans-les-metiers-de-loffshoring-et-les-nouvelles-technologies"
+  },
+  {
+    "title": "Institut Sp\u00e9cialis\u00e9 de Technologie Appliqu\u00e9e Route Aeroport - Tanger",
+    "id": 258,
+    "latitude": "35.74369444",
+    "longitude": "-5.846444444",
+    "path": "/fr/etablissements/institut-specialise-de-technologie-appliquee-route-aeroport-tanger"
+  },
+  {
+    "title": "Institut Sp\u00e9cialis\u00e9 de Technologie Appliqu\u00e9e Zone Libre Echange - Tanger",
+    "id": 263,
+    "latitude": "35.7185",
+    "longitude": "-5.912",
+    "path": "/fr/etablissements/institut-specialise-de-technologie-appliquee-zone-libre-echange-tanger"
+  },
+  {
+    "title": "Centre de Formation Ard Dawla - Tanger",
+    "id": 316,
+    "latitude": null,
+    "longitude": null,
+    "path": "/fr/etablissements/centre-de-formation-ard-dawla-tanger"
+  },
+  {
+    "title": "Centre de Formation des Femmes Mghougha - Tanger",
+    "id": 319,
+    "latitude": "35.735220",
+    "longitude": "-5.825286",
+    "path": "/fr/etablissements/centre-de-formation-des-femmes-mghougha-tanger"
+  },
+  {
+    "title": "Centre de Formation et de Renforcement des Comp\u00e9tences des Femmes Mesnana - Tanger",
+    "id": 323,
+    "latitude": "35.753944",
+    "longitude": "-5.855862",
+    "path": "/fr/etablissements/centre-de-formation-et-de-renforcement-des-competences-des-femmes-mesnana-tanger"
+  },
+  {
+    "title": "Centre de Formation et d'Insertion des Jeunes m'Ghougha - Tanger",
+    "id": 324,
+    "latitude": null,
+    "longitude": null,
+    "path": "/fr/etablissements/centre-de-formation-et-dinsertion-des-jeunes-mghougha-tanger"
+  },
+  {
+    "title": "Centre d'\u00e9ducation et Formation pour la Femme Dhar Kanfoud - Tanger",
+    "id": 325,
+    "latitude": null,
+    "longitude": null,
+    "path": "/fr/etablissements/centre-deducation-et-formation-pour-la-femme-dhar-kanfoud-tanger"
+  },
+  {
+    "title": "Centre d'\u00e9ducation et Formation pour la Femme Tanjah Balia",
+    "id": 326,
+    "latitude": null,
+    "longitude": null,
+    "path": "/fr/etablissements/centre-deducation-et-formation-pour-la-femme-tanjah-balia"
+  },
+  {
+    "title": "Centre d'Insertion Sociale Ziaten - Tanger",
+    "id": 327,
+    "latitude": null,
+    "longitude": null,
+    "path": "/fr/etablissements/centre-dinsertion-sociale-ziaten-tanger"
+  }
+]
