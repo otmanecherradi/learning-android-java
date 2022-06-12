@@ -3,6 +3,7 @@ package me.otmane.ntic.ui.schedules;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -22,8 +23,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.bumptech.glide.Glide;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.List;
@@ -76,7 +77,7 @@ public class SchedulesFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Schedule schedule = (Schedule) adapterView.getItemAtPosition(i);
 
-                Log.d(TAG, "onItemClick: "+schedule.getScheduleURL());
+                Log.d(TAG, "onItemClick: " + schedule.getScheduleURL());
                 Glide.with(requireContext())
                         .load(schedule.getScheduleURL())
                         .into(binding.scheduleImg);
@@ -89,23 +90,22 @@ public class SchedulesFragment extends Fragment {
         binding.download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                FileOutputStream outStream = null;
-//                File dataDirectory = Environment.getDataDirectory();
-//                File dir = new File(dataDirectory.getAbsolutePath() + "/YourFolderName");
-//                dir.mkdirs();
-//                String fileName = String.format("%d.jpg", System.currentTimeMillis());
-//                File outFile = new File(dir, fileName);
-//                try {
-//                    outStream = new FileOutputStream(outFile);
-//                    binding.scheduleImg.getDrawable();
-//                            btma.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
-//                    outStream.flush();
-//                    outStream.close();
-//                } catch (FileNotFoundException e) {
-//                    e.printStackTrace();
-//                }
+                BitmapDrawable drawable = (BitmapDrawable) binding.scheduleImg.getDrawable();
+                Bitmap bitmap = drawable.getBitmap();
 
+                File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+                String fileName = String.format("schdule-%d.jpg", System.currentTimeMillis());
+                File outFile = new File(path, fileName);
 
+                try {
+                    path.mkdirs();
+                    FileOutputStream outStream = new FileOutputStream(outFile);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
+                    outStream.flush();
+                    outStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

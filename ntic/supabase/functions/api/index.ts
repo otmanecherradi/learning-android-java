@@ -47,10 +47,18 @@ export class AuthService {
     return createResponse(error, data);
   }
 
-  public static async login(email: string, password: string) {
+  public static async login(email: string, password: string, fcmToken: string) {
     console.log('AuthService.login');
 
     const { data, error } = await client.auth.api.signInWithEmail(email.trim(), password);
+
+    if (!error) {
+      await admin.auth.api.updateUserById(data?.user?.id as string, {
+        user_metadata: {
+          fcmToken,
+        },
+      });
+    }
 
     return createResponse(error, data);
   }
@@ -299,11 +307,13 @@ export class DemandsService {
       return json(createResponse(studentError.message));
     }
 
+    const [d, m, y] = forDate.split('/');
+
     const { data, error } = await client.from('demands').insert(
       {
         student_id: studentData?.id,
         type: type.toLowerCase(),
-        for_date: new Date(forDate),
+        for_date: new Date(`${y}-${m}-${d}`),
         note,
         state: 'todo',
       },
@@ -376,7 +386,7 @@ serve({
   '/api/auth/login': async (req) => {
     const { error, body } = await validateRequest(req, {
       POST: {
-        body: ['email', 'password'],
+        body: ['email', 'password', 'fcm_token'],
       },
     });
 
@@ -384,11 +394,11 @@ serve({
       return json(createResponse(error.message));
     }
 
-    const { email, password } = body as { email: string; password: string };
-    if (!email || !password) {
-      return json(createResponse('email & password are required'));
+    const { email, password, fcm_token: fcmToken } = body as { email: string; password: string; fcm_token: string };
+    if (!email || !password || !fcmToken) {
+      return json(createResponse('email & password & fcm_token are required'));
     }
-    const response = await AuthService.login(email, password);
+    const response = await AuthService.login(email, password, fcmToken);
 
     return json(response);
   },
@@ -434,26 +444,6 @@ serve({
   },
 
   '/api/users/me': async (req) => {
-    const { error, body } = await validateRequest(req, {
-      POST: {
-        body: ['access_token'],
-      },
-    });
-
-    if (error) {
-      return json(createResponse(error.message));
-    }
-
-    const { access_token: accessToken } = body as { access_token: string };
-    if (!accessToken) {
-      return json(createResponse('access_token is required'));
-    }
-    const response = await UsersServices.me(accessToken);
-
-    return json(response);
-  },
-
-  '/api/users/update': async (req) => {
     const { error, body } = await validateRequest(req, {
       POST: {
         body: ['access_token'],

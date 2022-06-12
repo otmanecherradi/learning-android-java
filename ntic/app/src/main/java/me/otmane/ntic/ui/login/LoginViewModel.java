@@ -44,6 +44,7 @@ public class LoginViewModel extends ViewModel {
         AuthDTOs.LoginRequestDTO loginRequestDTO = new AuthDTOs.LoginRequestDTO();
         loginRequestDTO.setEmail(email);
         loginRequestDTO.setPassword(password);
+        loginRequestDTO.setFcmToken(DataStore.getInstance().getFCMToken());
 
         AuthRepository.login(loginRequestDTO)
                 .enqueue(new Callback<Result<AuthDTOs.LoginResponseDTO>>() {

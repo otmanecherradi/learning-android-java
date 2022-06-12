@@ -59,7 +59,6 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onChanged(UsersDTOs.MeResponseDTO user) {
                 Log.d(TAG, "onChanged: user => " + user);
-                Log.d(TAG, "onChanged: avatar => " + user.getStudent().getAvatarURL());
 
                 Glide.with(requireContext())
                         .load(user.getStudent().getAvatarURL())
@@ -89,22 +88,6 @@ public class ProfileFragment extends Fragment {
                 navController.navigate(R.id.action_navigationProfile_to_loginActivity);
             }
         });
-    }
-
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.profile_top_menu, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.editProfileMenu) {
-            navController.navigate(R.id.action_navigationProfile_to_navigationEditProfile);
-
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

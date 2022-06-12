@@ -51,16 +51,7 @@
         <action
             android:id="@+id/action_navigationProfile_to_loginActivity"
             app:destination="@id/loginActivity" />
-        <action
-            android:id="@+id/action_navigationProfile_to_navigationEditProfile"
-            app:destination="@id/navigationEditProfile" />
     </fragment>
-
-    <fragment
-        android:id="@+id/navigationEditProfile"
-        android:name="me.otmane.ntic.ui.profile.ProfileEditFragment"
-        android:label="Edit profile"
-        tools:layout="@layout/fragment_edit_profile" />
 
     <fragment
         android:id="@+id/navigationAddDemand"

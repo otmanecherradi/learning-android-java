@@ -16,12 +16,13 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 import me.otmane.ntic.R;
-import me.otmane.ntic.databinding.ElementDoubleRvBinding;
-import me.otmane.ntic.databinding.ElementSchoolRvBinding;
+import me.otmane.ntic.databinding.ElementDemandRvBinding;
 import me.otmane.ntic.databinding.FragmentDemandsBinding;
 import me.otmane.ntic.models.Demand;
 
@@ -99,7 +100,7 @@ public class DemandsFragment extends Fragment {
         @NonNull
         @Override
         public DemandsRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-            ElementDoubleRvBinding binding = ElementDoubleRvBinding.inflate(
+            ElementDemandRvBinding binding = ElementDemandRvBinding.inflate(
                     LayoutInflater.from(viewGroup.getContext()), viewGroup, false);
             return new DemandsRecyclerViewAdapter.ViewHolder(binding);
 
@@ -118,17 +119,22 @@ public class DemandsFragment extends Fragment {
         }
 
         static class ViewHolder extends RecyclerView.ViewHolder {
-            private final ElementDoubleRvBinding binding;
+            private final ElementDemandRvBinding binding;
 
-            public ViewHolder(@NonNull ElementDoubleRvBinding binding) {
+            public ViewHolder(@NonNull ElementDemandRvBinding binding) {
                 super(binding.getRoot());
 
                 this.binding = binding;
             }
 
             public void populateData(Demand d) {
-                binding.title.setText(d.getType());
-                binding.description.setText(d.getNote());
+                binding.type.setText(d.getType());
+                binding.status.setText(d.getState());
+
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+
+                binding.forDate.setText(simpleDateFormat.format(d.getForDate()));
+                binding.note.setText(d.getNote());
             }
 
             public void addListeners(Demand d) {

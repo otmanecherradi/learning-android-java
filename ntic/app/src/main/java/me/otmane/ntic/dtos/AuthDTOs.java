@@ -10,8 +10,8 @@ public class AuthDTOs {
         private String email;
         @SerializedName("password")
         private String password;
-//        @SerializedName("fcm_token")
-//        private String fcmToken;
+        @SerializedName("fcm_token")
+        private String fcmToken;
 
         public String getEmail() {
             return email;
@@ -29,13 +29,13 @@ public class AuthDTOs {
             this.password = password;
         }
 
-//        public String getFcmToken() {
-//            return fcmToken;
-//        }
-//
-//        public void setFcmToken(String fcmToken) {
-//            this.fcmToken = fcmToken;
-//        }
+        public String getFcmToken() {
+            return fcmToken;
+        }
+
+        public void setFcmToken(String fcmToken) {
+            this.fcmToken = fcmToken;
+        }
     }
 
     public static class LoginResponseDTO {

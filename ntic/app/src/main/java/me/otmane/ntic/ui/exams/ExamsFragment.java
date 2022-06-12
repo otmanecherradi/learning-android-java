@@ -31,10 +31,6 @@ public class ExamsFragment extends Fragment {
     private ExamsViewModel examsViewModel;
     private ExamsRecyclerViewAdapter examsRecyclerViewAdapter;
 
-    public static ExamsFragment newInstance() {
-        return new ExamsFragment();
-    }
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup viewGroup,
                              @Nullable Bundle savedInstanceState) {
@@ -119,10 +115,12 @@ public class ExamsFragment extends Fragment {
             }
 
             public void populateData(Exam e) {
-                binding.subject.setText(e.getGroupReference().getSubject().getName());
+                binding.subject.setText("Module " + e.getGroupReference().getSubject().getName());
+
+                binding.type.setText(e.getType());
 
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-                binding.date.setText(simpleDateFormat.format(e.getDate().toString()));
+                binding.date.setText(simpleDateFormat.format(e.getDate()));
             }
 
             public void addListeners(Exam e) {

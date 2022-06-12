@@ -5,7 +5,6 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Build;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,7 @@ import androidx.core.app.NotificationCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import me.otmane.ntic.R;
+import me.otmane.ntic.DataStore;
 
 public class PushNotificationService extends FirebaseMessagingService {
     public static final String TAG = "PushNotificationService";
@@ -22,6 +21,8 @@ public class PushNotificationService extends FirebaseMessagingService {
     @Override
     public void onNewToken(@NonNull String token) {
         super.onNewToken(token);
+
+        DataStore.getInstance().setFCMToken(token);
     }
 
     @Override
@@ -37,21 +38,22 @@ public class PushNotificationService extends FirebaseMessagingService {
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
+                "New schedule",
+                NotificationManager.IMPORTANCE_HIGH);
+
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(title)
                 .setContentText(text)
-                .setSmallIcon(R.drawable.ic_launcher_background)
                 .setAutoCancel(true)
-                .setSound(defaultSoundUri);
+                .setSound(defaultSoundUri)
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
+
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
-                    "Channel human readable title",
-                    NotificationManager.IMPORTANCE_DEFAULT);
-            notificationManager.createNotificationChannel(channel);
-        }
+        notificationManager.createNotificationChannel(channel);
+
         notificationManager.notify(1, notificationBuilder.build());
     }
 }
