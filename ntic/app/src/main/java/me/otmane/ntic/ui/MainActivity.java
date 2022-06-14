@@ -1,7 +1,9 @@
 package me.otmane.ntic.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -9,8 +11,16 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import me.otmane.ntic.DataStore;
 import me.otmane.ntic.R;
+import me.otmane.ntic.api.Result;
 import me.otmane.ntic.databinding.ActivityMainBinding;
+import me.otmane.ntic.dtos.AuthDTOs;
+import me.otmane.ntic.repositories.AuthRepository;
+import me.otmane.ntic.ui.login.LoginActivity;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +46,32 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        AuthDTOs.RefreshTokenRequestDTO refreshTokenRequestDTO = new AuthDTOs.RefreshTokenRequestDTO();
+        refreshTokenRequestDTO.setRefreshToken(DataStore.getInstance().getRefreshToken());
+        AuthRepository.refreshToken(refreshTokenRequestDTO).enqueue(new Callback<Result<AuthDTOs.RefreshTokenResponseDTO>>() {
+            @Override
+            public void onResponse(@NonNull Call<Result<AuthDTOs.RefreshTokenResponseDTO>> call,
+                                   @NonNull Response<Result<AuthDTOs.RefreshTokenResponseDTO>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    DataStore.getInstance().setAccessToken(response.body().getData().getAccessToken());
+                    DataStore.getInstance().setRefreshToken(response.body().getData().getRefreshToken());
+
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    finish();
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Result<AuthDTOs.RefreshTokenResponseDTO>> call,
+                                  @NonNull Throwable t) {
+                DataStore.getInstance().setAccessToken(null);
+                DataStore.getInstance().setRefreshToken(null);
+
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                finish();
+            }
+        });
     }
 
     @Override

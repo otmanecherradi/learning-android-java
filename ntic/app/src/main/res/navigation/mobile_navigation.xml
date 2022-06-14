@@ -51,6 +51,9 @@
         <action
             android:id="@+id/action_navigationProfile_to_loginActivity"
             app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_navigationProfile_to_colleaguesFragment"
+            app:destination="@id/colleaguesFragment" />
     </fragment>
 
     <fragment
@@ -64,4 +67,10 @@
         android:name="me.otmane.ntic.ui.login.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
+
+    <fragment
+        android:id="@+id/colleaguesFragment"
+        android:name="me.otmane.ntic.ui.profile.ColleaguesFragment"
+        android:label="fragment_colleagues"
+        tools:layout="@layout/fragment_colleagues" />
 </navigation>

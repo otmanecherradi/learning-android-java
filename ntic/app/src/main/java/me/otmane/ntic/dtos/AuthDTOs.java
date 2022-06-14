@@ -71,9 +71,35 @@ public class AuthDTOs {
         }
     }
 
-    public static class RefreshTokenResponseDTO {
-        @SerializedName("access_token")
-        String accessToken;
+    public static class RefreshTokenRequestDTO {
+        @SerializedName("refresh_token")
+        String refreshToken;
+        
+        public String getRefreshToken() {
+            return refreshToken;
+        }
+
+        public void setRefreshToken(String refreshToken) {
+            this.refreshToken = refreshToken;
+        }
     }
 
+    public static class RefreshTokenResponseDTO extends LoginResponseDTO {
+    }
+
+    public static class LogoutRequestDTO {
+        @SerializedName("access_token")
+        String accessToken;
+
+        public String getAccessToken() {
+            return accessToken;
+        }
+
+        public void setAccessToken(String accessToken) {
+            this.accessToken = accessToken;
+        }
+    }
+
+    public static class LogoutResponseDTO {
+    }
 }

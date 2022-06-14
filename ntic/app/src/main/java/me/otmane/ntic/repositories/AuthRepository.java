@@ -11,4 +11,14 @@ public class AuthRepository {
         return APIClient.getInstance().getAPI()
                 .login("Bearer " + BuildConfig.API_ANON_KEY, loginRequestDTO);
     }
+
+    public static Call<Result<AuthDTOs.RefreshTokenResponseDTO>> refreshToken(AuthDTOs.RefreshTokenRequestDTO refreshTokenRequestDTO) {
+        return APIClient.getInstance().getAPI()
+                .refreshToken("Bearer " + BuildConfig.API_ANON_KEY, refreshTokenRequestDTO);
+    }
+
+    public static Call<Result<AuthDTOs.LogoutResponseDTO>> logout(AuthDTOs.LogoutRequestDTO logoutRequestDTO) {
+        return APIClient.getInstance().getAPI()
+                .logout("Bearer " + BuildConfig.API_ANON_KEY, logoutRequestDTO);
+    }
 }

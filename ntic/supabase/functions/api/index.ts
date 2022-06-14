@@ -207,10 +207,21 @@ export class GroupsService {
     return createResponse(error, data);
   }
 
-  static async listStudents(groupId: string) {
+  static async listStudents(accessToken: string) {
     console.log('GroupsService.listStudents');
 
-    const { data, error } = await client.from('groups').select('*');
+    const { data: userData, error: userError } = await client.auth.api.getUser(accessToken);
+    if (userError) {
+      return json(createResponse(userError.message));
+    }
+
+    const { data: studentData, error: studentError } = await client.from('students').select('*').eq('id', userData?.id).single();
+
+    if (studentError) {
+      return json(createResponse(studentError.message));
+    }
+
+    const { data, error } = await client.from('students').select('*').eq('group_id', studentData?.group_id);
 
     return createResponse(error, data);
   }
@@ -463,9 +474,22 @@ serve({
     return json(response);
   },
 
-  '/api/group/:groupId/students/lis': async (req, con, params) => {
-    const groupId = (params as any).groupId as string;
-    const response = await GroupsService.listStudents(groupId);
+  '/api/users/me/group/students/list': async (req, con, params) => {
+    const { error, body } = await validateRequest(req, {
+      POST: {
+        body: ['access_token'],
+      },
+    });
+
+    if (error) {
+      return json(createResponse(error.message));
+    }
+
+    const { access_token: accessToken } = body as { access_token: string };
+    if (!accessToken) {
+      return json(createResponse('access_token is required'));
+    }
+    const response = await GroupsService.listStudents(accessToken);
 
     return json(response);
   },

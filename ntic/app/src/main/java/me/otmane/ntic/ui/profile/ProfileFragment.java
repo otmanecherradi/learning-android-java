@@ -3,9 +3,6 @@ package me.otmane.ntic.ui.profile;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,8 +18,14 @@ import com.bumptech.glide.Glide;
 
 import me.otmane.ntic.DataStore;
 import me.otmane.ntic.R;
+import me.otmane.ntic.api.Result;
 import me.otmane.ntic.databinding.FragmentProfileBinding;
+import me.otmane.ntic.dtos.AuthDTOs;
 import me.otmane.ntic.dtos.UsersDTOs;
+import me.otmane.ntic.repositories.AuthRepository;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProfileFragment extends Fragment {
     public static final String TAG = "ProfileFragment";
@@ -79,13 +82,38 @@ public class ProfileFragment extends Fragment {
     }
 
     private void initListeners() {
+        binding.colleagues.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_navigationProfile_to_colleaguesFragment);
+            }
+        });
+        
         binding.logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DataStore.getInstance().setAccessToken(null);
-                DataStore.getInstance().setRefreshToken(null);
+                AuthDTOs.LogoutRequestDTO logoutRequestDTO = new AuthDTOs.LogoutRequestDTO();
+                logoutRequestDTO.setAccessToken(DataStore.getInstance().getAccessToken());
 
-                navController.navigate(R.id.action_navigationProfile_to_loginActivity);
+                AuthRepository.logout(logoutRequestDTO).enqueue(new Callback<Result<AuthDTOs.LogoutResponseDTO>>() {
+                    @Override
+                    public void onResponse(@NonNull Call<Result<AuthDTOs.LogoutResponseDTO>> call,
+                                           @NonNull Response<Result<AuthDTOs.LogoutResponseDTO>> response) {
+                        if (response.isSuccessful()) {
+                            DataStore.getInstance().setAccessToken(null);
+                            DataStore.getInstance().setRefreshToken(null);
+
+                            navController.navigate(R.id.action_navigationProfile_to_loginActivity);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(@NonNull Call<Result<AuthDTOs.LogoutResponseDTO>> call,
+                                          @NonNull Throwable t) {
+
+                    }
+                });
+
             }
         });
     }

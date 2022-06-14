@@ -30,8 +30,6 @@ public class LoadingActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         handlePermissions();
-
-
     }
 
     public static boolean hasPermissions(Context context, String... permissions) {
@@ -80,7 +78,7 @@ public class LoadingActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
-    private void navigate(){
+    private void navigate() {
         String accessToken = DataStore.getInstance().getAccessToken();
 
         if (accessToken == null) {

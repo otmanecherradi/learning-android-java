@@ -5,6 +5,7 @@ import me.otmane.ntic.dtos.AuthDTOs;
 import me.otmane.ntic.dtos.BranchesDTOs;
 import me.otmane.ntic.dtos.DemandsDTOs;
 import me.otmane.ntic.dtos.ExamsDTOs;
+import me.otmane.ntic.dtos.GroupsDTOs;
 import me.otmane.ntic.dtos.SchedulesDTOs;
 import me.otmane.ntic.dtos.SchoolsDTOs;
 import me.otmane.ntic.dtos.UsersDTOs;
@@ -26,13 +27,13 @@ public interface APIInterface {
     @POST("api/auth/refresh")
     Call<Result<AuthDTOs.RefreshTokenResponseDTO>> refreshToken(
             @Header("Authorization") String authHeader,
-            @Body AuthDTOs.LoginRequestDTO loginDTO
+            @Body AuthDTOs.RefreshTokenRequestDTO refreshTokenRequestDTO
     );
 
     @POST("api/auth/logout")
-    Call<Result<AuthDTOs.LoginResponseDTO>> logout(
+    Call<Result<AuthDTOs.LogoutResponseDTO>> logout(
             @Header("Authorization") String authHeader,
-            @Body AuthDTOs.LoginRequestDTO loginDTO
+            @Body AuthDTOs.LogoutRequestDTO loginDTO
     );
 
     @POST("api/users/me")
@@ -82,5 +83,11 @@ public interface APIInterface {
     Call<Result<SchedulesDTOs.ListSchedulesResponseDTO>> listSchedules(
             @Header("Authorization") String authHeader,
             @Body SchedulesDTOs.ListSchedulesRequestDTO listSchedulesRequestDTO
+    );
+
+    @POST("api/users/me/group/students/list")
+    Call<Result<GroupsDTOs.GroupStudentsResponseDTO>> listGroupStudents(
+            @Header("Authorization") String authHeader,
+            @Body GroupsDTOs.GroupStudentsRequestDTO groupStudentsRequestDTO
     );
 }
