@@ -1,37 +1,10 @@
 import { json, serve, validateRequest } from 'https://deno.land/x/sift@0.5.0/mod.ts';
-import { summon } from 'https://deno.land/x/summon@0.0.2/mod.ts';
 
 import { corsHeaders } from '../_shared/cors.ts';
 import { admin, client } from '../_shared/supabase.ts';
 
 export function createResponse(error: any | null = null, data: any | null = null) {
   return { status: error ? 'ERROR' : 'SUCCESS', data: error ?? data };
-}
-
-export class NotificationService {
-  public static async send(fcmToken: string, title: string, body: string) {
-    console.log('NotificationService.send');
-    // fqgfTqFkRdyeravu7vYFwq:APA91bGD1Kj8-DVQSgh7cr0_1UcT5BJfPiwrdQFtxNFf7PFwGvHy7pSAF2SNbmznCnUoOrxUVWtnMeZvVA0td21o7_ul3_bLM87in9sz1_tK9sjml9-iboNW_v1IqWVY__Y_YLzvfMdQ
-    const { response, error } = await summon.post(
-      'https://fcm.googleapis.com/fcm/send',
-      {
-        to: fcmToken,
-        data: {
-          title,
-          body,
-        },
-      },
-      {
-        headers: {
-          'content-type': 'application/json',
-          Authorization:
-            'key=AAAA7G5G750:APA91bEupudrWWueH-2cQpDN62mlseadAAFB-VgXGgZ1gfyOdkTLHKhwzyyF-JGskUWi8utiCPlAa4cCDzzlSgyGRJ4tMQelfwHs7s39OVLjT9fKG00WSbKBKgsb4PXJWdUKwKGd45K6',
-        },
-      }
-    );
-
-    return createResponse(error, response);
-  }
 }
 
 export class AuthService {
