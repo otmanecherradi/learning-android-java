@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigationHome"
+        android:icon="@drawable/ic_outline_home_24"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigationExams"
+        android:icon="@drawable/ic_outline_topic_24"
+        android:title="Exams" />
+
+    <item
+        android:id="@+id/navigationSchedule"
+        android:icon="@drawable/ic_outline_calendar_month_24"
+        android:title="Schedules" />
+
+    <item
+        android:id="@+id/navigationDemands"
+        android:icon="@drawable/ic_outline_edit_note_24"
+        android:title="Demands" />
+
+    <item
+        android:id="@+id/navigationProfile"
+        android:icon="@drawable/ic_outline_person_24"
+        android:title="Profile" />
+
+</menu>

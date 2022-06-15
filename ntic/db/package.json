@@ -1,0 +1,21 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "knex": "knex",
+    "knex:m:mk": "knex migrate:make",
+    "knex:m": "knex migrate:latest",
+    "knex:m:rb": "knex migrate:rollback",
+    "knex:m:down": "knex migrate:down",
+    "knex:s:mk": "knex seed:make",
+    "knex:s": "knex seed:run"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "knex": "^2.0.0",
+    "pg": "^8.7.3"
+  },
+  "author": "Otmane",
+  "license": "UNLICENSED"
+}
