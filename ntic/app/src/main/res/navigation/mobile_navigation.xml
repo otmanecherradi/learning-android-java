@@ -71,6 +71,6 @@
     <fragment
         android:id="@+id/colleaguesFragment"
         android:name="me.otmane.ntic.ui.profile.ColleaguesFragment"
-        android:label="fragment_colleagues"
+        android:label="Colleagues"
         tools:layout="@layout/fragment_colleagues" />
 </navigation>

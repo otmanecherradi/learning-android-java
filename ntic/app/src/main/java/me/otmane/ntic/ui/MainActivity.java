@@ -56,9 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     DataStore.getInstance().setAccessToken(response.body().getData().getAccessToken());
                     DataStore.getInstance().setRefreshToken(response.body().getData().getRefreshToken());
-
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                    finish();
                 }
             }
 
